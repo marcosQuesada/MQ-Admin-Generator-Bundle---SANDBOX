@@ -1,0 +1,4 @@
+AcmeDemoBundle_test:
+    resource: "@AcmeDemoBundle/Resources/config/routing/test.yml"
+    prefix:   /test
+

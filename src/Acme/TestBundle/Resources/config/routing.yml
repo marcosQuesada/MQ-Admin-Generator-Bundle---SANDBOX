@@ -1,0 +1,8 @@
+#AcmeTestBundle:
+#    resource: .
+#    type: extra
+#    
+AcmeTestBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeTestBundle:Default:index }
+

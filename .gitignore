@@ -1,0 +1,8 @@
+/web/css
+/web/js
+/web/bundles/
+/app/cache/*
+/app/logs/*
+/vendor/
+/app/config/parameters.ini
+/nbproject

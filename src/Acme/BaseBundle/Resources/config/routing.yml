@@ -1,0 +1,11 @@
+AcmeBaseBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeBaseBundle:Default:index }
+    
+AcmeBaseBundle_attribute_crud:
+    resource: "@AcmeBaseBundle/Resources/config/routing/attribute.yml"
+    prefix:   /attribute    
+    
+AcmeBaseBundle_attributecollection_crud:
+    resource: "@AcmeBaseBundle/Resources/config/routing/attributecollection.yml"
+    prefix:   /attributecollection     

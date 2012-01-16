@@ -1,0 +1,30 @@
+attribute:
+    pattern:  /
+    defaults: { _controller: "AcmeBaseBundle:Attribute:index" }
+
+attribute_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AcmeBaseBundle:Attribute:show" }
+
+attribute_new:
+    pattern:  /new
+    defaults: { _controller: "AcmeBaseBundle:Attribute:new" }
+
+attribute_create:
+    pattern:  /create
+    defaults: { _controller: "AcmeBaseBundle:Attribute:create" }
+    requirements: { _method: post }
+
+attribute_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AcmeBaseBundle:Attribute:edit" }
+
+attribute_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AcmeBaseBundle:Attribute:update" }
+    requirements: { _method: post }
+
+attribute_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AcmeBaseBundle:Attribute:delete" }
+    requirements: { _method: post }

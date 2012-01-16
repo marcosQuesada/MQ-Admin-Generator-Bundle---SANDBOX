@@ -1,0 +1,8 @@
+AcmeAdminBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeAdminBundle:Default:index }
+    
+AcmeAdminBundle:
+    resource: .
+    type: extra
+    

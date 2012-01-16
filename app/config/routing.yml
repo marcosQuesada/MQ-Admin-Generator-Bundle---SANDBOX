@@ -1,0 +1,16 @@
+AcmeTestBundle:
+    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+    prefix:   /demo
+
+AcmeBaseBundle:
+    resource: "@AcmeBaseBundle/Resources/config/routing.yml"
+    prefix:   /base
+
+AcmeAdminBundle:
+    resource: "@AcmeAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal

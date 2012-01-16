@@ -1,0 +1,58 @@
+parameters:
+#    acme_base.example.class: Acme\BaseBundle\Example
+
+#services:
+#    acme_base.example:
+#        class: %acme_base.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+services:
+   acme_base.core.admin.location:
+      class: Acme\BaseBundle\Admin\LocationAdmin
+      tags:
+        - { name: admin.pool }
+      arguments:         
+        -  [Acme\BaseBundle\Entity\Location]
+             
+   acme_base.core.admin.product:
+      class: Acme\BaseBundle\Admin\ProductAdmin
+      tags:
+        - { name: admin.pool }
+      arguments: 
+        -  [Acme\BaseBundle\Entity\Producto]
+        
+   acme_base.core.admin.attribute:
+      class: Acme\BaseBundle\Admin\AttributeAdmin
+      tags:
+        - { name: admin.pool }
+      arguments: 
+        -  [Acme\BaseBundle\Entity\Attribute]     
+        
+   acme_base.core.admin.attribute_collection:
+      class: Acme\BaseBundle\Admin\AttributeCollectionAdmin
+      tags:
+        - { name: admin.pool }
+      arguments: 
+        -  [Acme\BaseBundle\Entity\AttributeCollection]          
+#   acme_mailer.transport.smtp:
+#        class: \Swift_SmtpTransport
+#        arguments:
+#            - %mailer_host%
+#        tags:
+#            -  { name: acme_mailer.transport }
+#   acme_mailer.transport.sendmail:
+#        class: \Swift_SendmailTransport
+#        tags:
+#            -  { name: acme_mailer.transport }  
+            
+#   playground_core.menu_builder:
+#        class: Playground\CoreBundle\Menu\MenuBuilder
+#        arguments: ["@knp_menu.factory"]
+#
+#   playground_core.menu.principal:
+#        class: Knp\Menu\MenuItem # the service definition requires setting the class
+#        factory_service: playground_core.menu_builder
+#        factory_method: createMenuPrincipal
+#        arguments: ["@request"]
+#        scope: request # needed as we have the request as a dependency here
+#        tags:
+#            - { name: knp_menu.menu, alias: principal } # The alias is what is used to retrieve the menu      

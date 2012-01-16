@@ -1,0 +1,31 @@
+parameters:
+    acme_admin.admin_pool.class: Acme\AdminBundle\Admin\AdminPool
+    acme_admin.admin_entity.class: Acme\AdminBundle\Admin\AdminEntity
+    acme_admin.routing_loader: Acme\AdminBundle\Routing\ExtraLoader
+
+services:
+    acme_admin.admin_pool:
+        class: %acme_admin.admin_pool.class%
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    acme_admin.admin_entity:
+        class: %acme_admin.admin_entity.class%
+        scope: request
+        arguments: 
+          - "@service_container"
+          - "@doctrine.orm.entity_manager"
+          - "@request"
+          - "@router"
+        
+    admin.routing_loader:  
+        class: %acme_admin.routing_loader%
+        tags:
+          - { name: routing.loader}
+        arguments: ["@service_container"]          
+
+    admin.routing.action_listener:
+        class: Acme\AdminBundle\EventListener\MyEntityLoaderListener
+        arguments: ["@service_container"]
+        tags:
+          -   { name: kernel.event_listener, event: kernel.controller, method: onCoreController }
+    
