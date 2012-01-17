@@ -91,6 +91,7 @@ class CRUDController extends Controller
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->setFlash('notice', 'Creation successfully!');
             $routes = $adminEntity->getEntityRoutes();
             return $this->redirect($this->generateUrl($routes['show'], array('id' => $entity->getId())));
             
@@ -157,6 +158,7 @@ class CRUDController extends Controller
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->setFlash('notice', 'Update successfully!');
             $routes = $adminEntity->getEntityRoutes();
             return $this->redirect($this->generateUrl($routes['list'], array('id' => $entity->getId())));            
         }          
@@ -193,6 +195,7 @@ class CRUDController extends Controller
             $em = $this->getDoctrine()->getEntityManager();
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->setFlash('notice', 'Delete successfully!');
         }
         $routes = $adminEntity->getEntityRoutes();
         return $this->redirect($this->generateUrl($routes['list']));

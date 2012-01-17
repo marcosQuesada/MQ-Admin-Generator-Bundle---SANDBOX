@@ -34,3 +34,10 @@
             <button type="submit" class="btn danger">Delete</button>
         </form>
 {%endblock %}
+{% block sidebar %}
+{{ parent() }}
+    <div class="alert-message info">
+      <p><strong>Information. </strong>Flash Message Space TODO!</p>
+    </div>
+
+{% endblock sidebar %}

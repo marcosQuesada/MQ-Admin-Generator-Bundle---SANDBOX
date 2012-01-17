@@ -6,7 +6,7 @@
 <h1>{{entityName}} List</h1>
 </div>
 
-<table class="zebra-striped">
+<table class="zebra-striped" id="show_table">
     <thead>
         <tr>
             {% for fields in entityFields %} 
@@ -44,14 +44,22 @@
             Create a new entry
         </a>
 </div>
+
+<script type="text/javascript" src="{{ asset('/bundles/acmeadmin/js/jquery-latest.js')}}"></script>
+<script type="text/javascript" src="{{ asset('/bundles/acmeadmin/js/jquery.tablesorter.min.js')}}">
+$(function() {		
+	$("#show_table").tablesorter({sortList:[[0,0],[2,1]], widgets: ['zebra']});		
+});	
+</script>
 {% endblock content %}
 
 {% block sidebar %}
 {{ parent() }}
-    <ul>
-        <li class="header"> Sidebar Menu From Index (list) view</li>
-        <li> Sidebar Menu</li>
-        <li> Sidebar Menu</li>
-    </ul>
-
+ <ul><li class="header"> 
+    <div class="alert-message info">
+      <p><strong>Information. </strong>Flash Message Space TODO!</p>
+    </div>
+    </li>
+</ul>    
 {% endblock sidebar %}
+

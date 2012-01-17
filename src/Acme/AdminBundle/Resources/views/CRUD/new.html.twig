@@ -18,3 +18,10 @@
 </a>
 
 {%endblock %}
+{% block sidebar %}
+{{ parent() }}
+    <div class="alert-message info">
+      <p><strong>Information. </strong>Flash Message Space TODO!</p>
+    </div>
+
+{% endblock sidebar %}

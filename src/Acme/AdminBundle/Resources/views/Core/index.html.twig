@@ -6,12 +6,9 @@
     <h1>Dashboard</h1> 
 </div>
     
-    <div class="alert-message info">
-      <p><strong>Information. </strong>Flash Message Space TODO!</p>
-    </div>
-    <div class="well">
+<div class="well">
     {% for entity in mappedEntitiesName %}      
             <p><a href ="{{path( entity.route )}}">{{entity.name}}</a></p>
     {% endfor %}
-    </div>
+</div>
 {% endblock content %}
