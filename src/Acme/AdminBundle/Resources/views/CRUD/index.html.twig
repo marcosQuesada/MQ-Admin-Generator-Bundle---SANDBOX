@@ -46,10 +46,15 @@
 </div>
 
 <script type="text/javascript" src="{{ asset('/bundles/acmeadmin/js/jquery-latest.js')}}"></script>
-<script type="text/javascript" src="{{ asset('/bundles/acmeadmin/js/jquery.tablesorter.min.js')}}">
-$(function() {		
-	$("#show_table").tablesorter({sortList:[[0,0],[2,1]], widgets: ['zebra']});		
-});	
+<script type="text/javascript" src="{{ asset('/bundles/acmeadmin/js/jquery.tablesorter.min.js')}}"></script>
+	
+	<script type="text/javascript">
+	
+	$(function() {
+		$("table").tablesorter()				
+	});
+	
+	</script>	
 </script>
 {% endblock content %}
 
